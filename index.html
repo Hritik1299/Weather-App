@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="weather-container">
+    <!-- Night Mode Toggle -->
+    <label class="switch">
+      <input type="checkbox" id="modeToggle" onchange="toggleMode()">
+      <span class="slider round"></span>
+    </label>
+    <p id="modeLabel">☀️ Light Mode</p>
+
+    <h2>Weather App</h2>
+    <input type="text" id="cityInput" placeholder="Enter city" />
+    <button onclick="getWeather()">Get Weather</button>
+    <div id="weatherResult">
+      <div id="icon"></div>
+      <div id="description"></div>
+      <div id="details"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+<!-- File: weather_app/script.js -->

@@ -1,0 +1,150 @@
+:root {
+  --bg-color: linear-gradient(to right, #73e4cf, #ACB6E5);
+  --container-bg: #ffffff;
+  --text-color: #333;
+  --input-bg: #fff;
+  --btn-bg: #4CAF50;
+  --btn-hover: #45a049;
+}
+
+body.dark {
+  --bg-color: #201f1f;
+  --container-bg: #000000;
+  --text-color: #eee;
+  --input-bg: #2c2c2c;
+  --btn-bg: #2196F3;
+  --btn-hover: #1e88e5;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-color);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+}
+
+.weather-container {
+  background-color: var(--container-bg);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+  position: relative;
+}
+
+input {
+  width: 80%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--btn-bg);
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--btn-bg);
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--btn-hover);
+}
+
+#weatherResult {
+  margin-top: 1rem;
+}
+
+#icon img {
+  width: 80px;
+  height: 80px;
+}
+
+#description {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+#details {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* Night mode toggle switch */
+.switch {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+@media (max-width: 400px) {
+  .weather-container {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  input {
+    width: 100%;
+  }
+}
